@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理系统-用户后台</title>
+    <link rel="shortcut icon" href="../public/img/favicon.ico">
+    <link rel="stylesheet" href="../public/css/basic.css">
+    <link rel="stylesheet" href="../public/css/list.css">
+    <title>list.html</title>
+</head>
+
+<body>
+    <div id="root" class="flex-column">
+        <header class="flex-center" onselectstart="return false">
+            <h2>管理系统-用户后台</h2>
+        </header>
+        <div class="add" onselectstart="return false">
+            <a href="/"><button class="form-button button_four">添加用户</button></a>
+        </div>
+        <main class="flex-center-x" onselectstart="return false">
+            <table class="table flex-column" id="table">
+                <thead>
+                    <tr class="tr">
+                        <th class="th">ID</th>
+                        <th class="th">用户名</th>
+                        <th class="th">账号</th>
+                        <th class="th">操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{ each users }}
+                    <tr class="tr">
+                        <td class="td">{{ $value.ID }}</td>
+                        <td class="td">{{ $value.username }}</td>
+                        <td class="td">{{ $value.account }}</td>
+                        <td class="td">
+                            <div class="default">
+                                <a href="/edit?ID={{ $value.ID }}"><button class="form-button button_two" >编辑</button></a>
+                                <a href="/delete?ID={{ $value.ID }}"><button class="form-button button_two">删除</button></a>
+                            </div>
+                        </td>
+                    </tr>
+                    {{ /each }}
+                </tbody>
+            </table>
+        </main>
+        <footer onselectstart="return false">
+            <p>©2020 zh_hc. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+
+</html>

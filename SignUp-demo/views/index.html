@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理系统-添加用户</title>
+    <link rel="shortcut icon" href="../public/img/favicon.ico">
+    <link rel="stylesheet" href="../public/css/basic.css">
+    <link rel="stylesheet" href="../public/css/index.css">
+    <script src="../public/js/code.js"></script>
+    <script src="../public/js/onKeyDown.js"></script>
+</head>
+<body onload="createCode()" onkeydown="keyLogin()" onselectstart="return false">
+    <div id="root" class="flex-column">
+        <header class="flex-center">
+            <h1>管理系统-添加用户</h1>
+        </header>
+        <div class="return" onselectstart="return false">
+            <a href="/list"><button class="form-button button_four">用户后台</button></a>
+        </div>
+        <main class="flex-center">
+            <form action="/" method="post" onsubmit="return validate()">
+                <div class="form flex-column flex-center">
+                    <div class="form-item-label flex-center">
+                        <input type="text" placeholder="用户名" id="username" name="username" required maxlength="10" autocomplete="off">
+                    </div>
+                    <div class="form-item-label flex-center">
+                        <input type="number" placeholder="账号" id="ID" name="account" required min=1 maxlength="13" autocomplete="off">
+                    </div>
+                    <div class="form-item-label flex-start">
+                        <input type="text" placeholder="验证码" id="code" id="input1" required autocomplete="off">
+                        <input type="button" id="checkCode" class="code" class="flex-center" onclick="createCode()">
+                    </div>
+                    <div class="form-item-label flex-center">
+                        <button type="submit" id="signup" class="form-button">添加</button>
+                    </div>
+                </div>
+            </form>
+        </main>
+        <footer>
+            <p>©2020 zh_hc. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

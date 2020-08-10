@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理系统-编辑用户</title>
+    <link rel="shortcut icon" href="../public/img/favicon.ico">
+    <link rel="stylesheet" href="../public/css/basic.css">
+    <link rel="stylesheet" href="../public/css/index.css">
+    <script src="../public/js/code.js"></script>
+    <script src="../public/js/onKeyDown.js"></script>
+</head>
+<body onkeydown="keyLogin()" onselectstart="return false">
+    <div id="root" class="flex-column">
+        <header class="flex-center">
+            <h1>管理系统-编辑用户</h1>
+        </header>
+        <div class="return" onselectstart="return false">
+            <a href="/list"><button class="form-button button_four">用户后台</button></a>
+        </div>
+        <main class="flex-center">
+            <form action="/edit" method="post" onsubmit="return validate()">
+                <!-- 用来放一些不希望被用户看见，但是需要被提交到服务端的数据 -->
+                <input type="hidden" name="ID" value="{{ user.ID }}">
+                <div class="form flex-column flex-center">
+                    <div class="form-item-label flex-start">
+                        <label class="flex">用户名</label>
+                        <input class="center" type="text" placeholder="用户名" name="username" value="{{ user .username }}" required maxlength="10" autocomplete="off">
+                    </div>
+                    <div class="form-item-label flex-start">
+                        <lable class="flex">账号</lable>
+                        <input class="center" type="number" placeholder="账号" id="ID" name="account" value="{{ user.account }}" required min=1 maxlength="13" autocomplete="off">
+                    </div>
+                    <div class="form-item-label flex-center">
+                        <button type="submit" id="signup" class="form-button">修改</button>
+                    </div>
+                </div>
+            </form>
+        </main>
+        <footer>
+            <p>©2020 zh_hc. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

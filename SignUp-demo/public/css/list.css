@@ -1,0 +1,63 @@
+/* 鼠标指针为默认类型 */
+main {
+    cursor: default;
+}
+
+/* 固定表头 */
+tbody {
+    overflow:auto;
+}
+
+.table {
+    width: 1000px;
+    max-height: 550px;
+    height: auto;
+    overflow-y: auto;
+    border-left: 5px solid white;
+    border-right: 5px solid white;
+}
+
+.tr {
+    width: 100%;
+    display: flex;
+}
+
+.th, .td {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 55px;
+    line-height: 40px;
+}
+
+.tr:nth-child(even) {
+    background: #90e6bc;
+}
+
+.tr:nth-child(odd) {
+    background: white;
+}
+
+.th:nth-child(n) {
+    background: #31c27c;
+}
+
+.form-button {
+    cursor: pointer;
+}
+
+/* 两个字的按钮 */
+.button_two {
+    width: 60px;
+    height: 30px;
+}
+
+.default {
+    cursor: default;
+}
+
+/* 去掉滚动条，但是保留滚动功能 */
+::-webkit-scrollbar{
+    display:none;
+}
